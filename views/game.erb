@@ -13,5 +13,16 @@
             You searched for:
             <strong><%= @title %></strong>.
         </p>
+        <p>
+            There were
+            <strong><%= @results %></strong>
+            results.
+        </p>
+
+        <ul class="movie-list">
+            <% @movies.each do |movie| %>
+                <li><img src="<%= movie.poster %>"></li>
+            <% end %>
+        </ul>
     </body>
 </html>
