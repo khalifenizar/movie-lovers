@@ -16,6 +16,7 @@ get '/game' do
 
     @results = search.movies.size
     @movies = movie_filter.filter(9)
+    @correct = @movies.sample
 
     erb :game
 end

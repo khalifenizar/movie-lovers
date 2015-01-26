@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <title>Movie Lovers</title>
 
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="/main.css">
+        <script defer src="/main.js"></script>
     </head>
     <body>
         <h1>Movie Lovers</h1>
@@ -19,10 +20,17 @@
             results.
         </p>
 
+        <h2>
+            Which of these films was released in
+            <em><%= @correct.year %></em>?
+        </h2>
+
         <ul class="movie-list">
             <% @movies.each do |movie| %>
                 <li>
-                    <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+                    <button data-hook="guess <%= 'correct' if movie.year == @correct.year %>">
+                        <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+                    </button>
                 </li>
             <% end %>
         </ul>
