@@ -21,7 +21,9 @@
 
         <ul class="movie-list">
             <% @movies.each do |movie| %>
-                <li><img src="<%= movie.poster %>"></li>
+                <li>
+                    <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+                </li>
             <% end %>
         </ul>
     </body>
